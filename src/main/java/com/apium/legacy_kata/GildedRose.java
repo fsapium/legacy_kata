@@ -11,11 +11,10 @@ class GildedRose {
   }
 
   public void updateQuality() {
-    for (int i = 0; i < items.length; i++) {
-      Item item = items[i];
-      if(item.name.contains(CONJURED_ITEM)) {
+    for (Item item : items) {
+      if (item.name.contains(CONJURED_ITEM)) {
         updateConjuredItems(item);
-      }else {
+      } else {
         updateNormalItems(item);
       }
     }
@@ -75,7 +74,7 @@ class GildedRose {
             }
           }
         } else {
-          item.quality = item.quality - item.quality;
+          item.quality = 0;
         }
       } else {
         if (item.quality < 50) {
